@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5100660693332512767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f517638b73f01c34780e6f4e044107a3, type: 3}
+  m_Name: Watermelon.AdsManagerInitModule
+  m_EditorClassIdentifier: 
+  moduleName: Ads Manager
+  settings: {fileID: 11400000, guid: f0858c0f24b3ff5489e1fefb94c661e5, type: 2}
+  dummyCanvasPrefab: {fileID: 985655532585203946, guid: a7af08efc5cd16c4db955b7f65f00dfc,
+    type: 3}
+  gdprPrefab: {fileID: 2665059414450368139, guid: 25b05165b3e164d41a5e0f7d29a77b0a,
+    type: 3}
+  loadAdOnStart: 1
+--- !u!114 &-2744239200444536980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c984de218fd184941b3d56bc8cc7cd44, type: 3}
+  m_Name: Watermelon.PrefsInitModule
+  m_EditorClassIdentifier: 
+  moduleName: Prefs Settings
+  prefsSettings: {fileID: 11400000, guid: 7d7a9bd91a6c8b94592743e69bf7b01f, type: 2}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a0258cb7d17964493174ceaf8d2867, type: 3}
+  m_Name: Project Init Settings
+  m_EditorClassIdentifier: 
+  initModules:
+  - {fileID: -2744239200444536980}
+  - {fileID: 5321261888481077867}
+  - {fileID: 1541307628909891008}
+  - {fileID: -5100660693332512767}
+  - {fileID: 4843368711887817407}
+  - {fileID: 779070871751298899}
+--- !u!114 &779070871751298899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e4e34b37285094ea49b9c1301c78e6, type: 3}
+  m_Name: Watermelon.IAPManagerInitModule
+  m_EditorClassIdentifier: 
+  moduleName: IAP Manager
+  settings: {fileID: 11400000, guid: f9e742c6644852f4397ba85c9f7efefe, type: 2}
+  canvas: {fileID: 4428939727153499309, guid: 9ccb3bd803809cc449b332921a7edf6f, type: 3}
+--- !u!114 &1541307628909891008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e8aee3fa033774784c3dd89d1fc896, type: 3}
+  m_Name: Watermelon.TweenInitModule
+  m_EditorClassIdentifier: 
+  moduleName: Tween
+  easingSettings: {fileID: 11400000, guid: ce64a53ce14f70b43a7d42e03f9740c6, type: 2}
+  tweensUpdateCount: 100
+  tweensFixedUpdateCount: 0
+  tweensLateUpdateCount: 0
+  enableSystemLogs: 0
+--- !u!114 &4843368711887817407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27433fc73d0e094491cb89c195d0cf8, type: 3}
+  m_Name: Watermelon.AudioControllerInitModule
+  m_EditorClassIdentifier: 
+  moduleName: Audio Controller
+  audioSettings: {fileID: 11400000, guid: 503b1ff9b67b4c644b15ce25918d2d63, type: 2}
+  playRandomMusic: 1
+--- !u!114 &5321261888481077867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35eb353375c8bb340b11c6306b0786dd, type: 3}
+  m_Name: Watermelon.ControlInitModule
+  m_EditorClassIdentifier: 
+  moduleName: Control Manager
+  selectAutomatically: 1
+  inputType: 0
