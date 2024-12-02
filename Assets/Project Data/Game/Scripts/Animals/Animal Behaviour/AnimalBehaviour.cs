@@ -104,7 +104,7 @@ namespace Watermelon
 
             // Initialise state machine controller
             animalStateMachineController = new AnimalStateMachineController();
-            animalStateMachineController.Initialise(this, AnimalStateMachineController.State.Carrying);
+            animalStateMachineController.Initialise(this, AnimalStateMachineController.State.Waiting);
         }
 
         private void Update()
