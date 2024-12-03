@@ -72,10 +72,14 @@ public class ColliderCheck : MonoBehaviour
     {
         if (hit.CompareTag("BlackCat"))
         {
+            CatAI catAI = hit.GetComponent<CatAI>();
+            catAI.enabled = false;
             MoveToPlayHolder(hit.transform, blackCatPlayHolder, CalculateBlackCatPosition(), blackCats);
         }
         else if (hit.CompareTag("YellowCat"))
         {
+            CatAI catAI = hit.GetComponent<CatAI>();
+            catAI.enabled = false;
             MoveToPlayHolder(hit.transform, yellowCatPlayHolder, CalculateYellowCatPosition(), yellowCats);
         }
     }
