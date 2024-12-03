@@ -100,9 +100,9 @@ public class PlayerTouchMovement : MonoBehaviour
         if(movementAmount.sqrMagnitude > 0) {
             player.transform.LookAt(player.transform.position + scaledMovement, Vector3.up);
             player.Move(scaledMovement);
-            _anim.SetFloat("speed", movementAmount.magnitude);
+            _anim.SetFloat("Velocity", movementAmount.magnitude);
         } else {
-            _anim.SetFloat("speed", 0);
+            _anim.SetFloat("Velocity", 0);
         }
     }
 }
