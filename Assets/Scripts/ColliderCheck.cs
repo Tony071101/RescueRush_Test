@@ -72,14 +72,10 @@ public class ColliderCheck : MonoBehaviour
     {
         if (hit.CompareTag("BlackCat"))
         {
-            CatAI catAI = hit.GetComponent<CatAI>();
-            catAI.enabled = false;
             MoveToPlayHolder(hit.transform, blackCatPlayHolder, CalculateBlackCatPosition(), blackCats);
         }
         else if (hit.CompareTag("YellowCat"))
         {
-            CatAI catAI = hit.GetComponent<CatAI>();
-            catAI.enabled = false;
             MoveToPlayHolder(hit.transform, yellowCatPlayHolder, CalculateYellowCatPosition(), yellowCats);
         }
     }
@@ -106,8 +102,11 @@ public class ColliderCheck : MonoBehaviour
     private void DisableNavMeshAgent(Collider hit)
     {
         NavMeshAgent navMeshAgent = hit.GetComponent<NavMeshAgent>();
+        CatAI catAI = hit.GetComponent<CatAI>();
         if (navMeshAgent != null)
         {
+            catAI.enabled = false;
+            navMeshAgent.speed = 0;
             navMeshAgent.enabled = false;
         }
     }
