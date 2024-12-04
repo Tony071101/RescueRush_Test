@@ -15,6 +15,7 @@ public class PlayerTouchMovement : MonoBehaviour
     private Animator _anim;
     private Finger movementFinger;
     private Vector2 movementAmount;
+    private bool autoMovingInPhase2 = false;
 
     private void Start() {
         player = GetComponent<NavMeshAgent>();
@@ -37,6 +38,10 @@ public class PlayerTouchMovement : MonoBehaviour
 
     private void HandleFingerDown(Finger TouchedFinger)
     {
+        if(GameManager.Instance.CurrentState != GameManager.GameState.Phase_One) {
+            return;
+        }
+
         if(movementFinger == null && TouchedFinger.screenPosition.y <= Screen.height / 2f) {
             movementFinger = TouchedFinger;
             movementAmount = Vector2.zero;
@@ -93,9 +98,15 @@ public class PlayerTouchMovement : MonoBehaviour
 
     private void Update() {
         PlayerMove();
+        PlayerAutoMove();
     }
 
     private void PlayerMove(){
+        if(GameManager.Instance.CurrentState != GameManager.GameState.Phase_One) {
+            _anim.SetFloat("Velocity", 0);
+            return;
+        }
+
         Vector3 scaledMovement = player.speed * Time.deltaTime * new Vector3(movementAmount.x, 0, movementAmount.y);
         if(movementAmount.sqrMagnitude > 0) {
             player.transform.LookAt(player.transform.position + scaledMovement, Vector3.up);
@@ -104,5 +115,22 @@ public class PlayerTouchMovement : MonoBehaviour
         } else {
             _anim.SetFloat("Velocity", 0);
         }
+    }
+
+    private void PlayerAutoMove() {
+        if(GameManager.Instance.CurrentState != GameManager.GameState.Phase_Two) {
+            return;
+        }
+
+        if(!autoMovingInPhase2) {
+            transform.position = new Vector3(50f, 0f, 80f);
+            autoMovingInPhase2 = true;
+        }
+
+        transform.rotation = Quaternion.identity;
+        Vector3 forwardDirection = Vector3.forward;
+        player.Move(forwardDirection * player.speed * Time.deltaTime);
+
+        _anim.SetFloat("Velocity", player.speed);
     }
 }

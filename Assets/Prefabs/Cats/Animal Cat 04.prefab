@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 559999405703474259}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: L_Leg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 2845536905073837824}
   - component: {fileID: 3300509172158354908}
   - component: {fileID: 4386008940169065400}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Cat_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7548301324802798204}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: R_Leg1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8071674571549801967}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: R_Leg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3192123804326165470}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: R_Ear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2891996835610906287}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: L_Leg1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4102768477350644934}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: R_Leg2_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2147223976356333143}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Tail_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1282726435386159633}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: R_Leg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3690554132306046027}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Cat_Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 8340923360038241179}
   - component: {fileID: 1927749154111815057}
   - component: {fileID: 3358633564142897085}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Animal Cat 04
   m_TagString: BlackCat
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ Transform:
   m_GameObject: {fileID: 5805259332762285786}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.442364, y: -0.00000011920929, z: 13.79}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -491,7 +491,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 2
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -525,7 +525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8814525151760098243}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: L_Ear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 3768067466786902887}
   - component: {fileID: 7027071117030948081}
   - component: {fileID: 5497256460437163621}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Cat_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7259643803009271917}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: L_Leg2_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2718602782363257819}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,7 +737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9081888589384900965}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Tail_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -768,7 +768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6156589275758770293}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,7 +801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4390078885869506936}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: L_Leg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
