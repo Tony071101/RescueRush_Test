@@ -15,8 +15,8 @@ public class ColliderCheck : MonoBehaviour
     private Dictionary<Collider, float> detectedObjects = new Dictionary<Collider, float>();
     private List<Transform> blackCats = new List<Transform>();
     private List<Transform> yellowCats = new List<Transform>();
-    void Update()
-    {
+
+    private void Update() {
         CheckConeArea();
     }
 
@@ -91,7 +91,7 @@ public class ColliderCheck : MonoBehaviour
 
     private Vector3 CalculateBlackCatPosition()
     {
-        return blackCatPlayHolder.position + new Vector3(0, 0, blackCats.Count * -spacing);
+        return blackCatPlayHolder.position + new Vector3(0, 0, -blackCats.Count * spacing);
     }
 
     private Vector3 CalculateYellowCatPosition()
