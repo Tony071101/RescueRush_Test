@@ -19,6 +19,7 @@ public class MovingCube : MonoBehaviour
         }
 
         if (IsInLayerMask(other.gameObject, playerLayerMask)) {
+            other.gameObject.SetActive(false);
             GameManager.Instance.ChangeState(GameManager.GameState.GameEnd);
         }
     }
