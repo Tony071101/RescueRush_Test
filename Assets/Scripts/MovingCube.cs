@@ -14,7 +14,6 @@ public class MovingCube : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log($"Collided with: {other.gameObject.name}");
         if (IsInLayerMask(other.gameObject, catLayerMask)) {
             Destroy(other.gameObject);
         }
@@ -24,7 +23,6 @@ public class MovingCube : MonoBehaviour
         }
     }
 
-    //Check layer
     private bool IsInLayerMask(GameObject obj, LayerMask layerMask) {
         return (layerMask.value & (1 << obj.layer)) > 0;
     }

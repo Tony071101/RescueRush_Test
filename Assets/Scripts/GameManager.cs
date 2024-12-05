@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public enum GameState { GameStart, Phase_One, Phase_Two, GameEnd }
+    public enum GameState { Default, GameStart, Phase_One, Phase_Two, GameEnd }
     public GameState CurrentState { get; private set; }
     [SerializeField] private Transform[] catLocations;
     [SerializeField] private GameObject[] catPrefabs;
@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start() {
+        ChangeState(GameState.Default);
         movingCube = FindObjectOfType<MovingCube>();
         gameStartTimeline.stopped += OnGameStartTimelineFinished;
 
@@ -76,6 +77,8 @@ public class GameManager : MonoBehaviour
     {
         switch (newState)
         {
+            case GameState.Default:
+                break;
             case GameState.GameStart:
                 gameStartTimeline.Play();
                 movingCube.moveSpeed = 15f;
@@ -216,6 +219,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void RestartGame() {
+        ChangeState(GameState.Default);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
