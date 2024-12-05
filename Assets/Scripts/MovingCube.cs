@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class MovingCube : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
+    public float moveSpeed { get; set; }
     [SerializeField] private LayerMask catLayerMask;
     [SerializeField] private LayerMask playerLayerMask;
     private void Update() {

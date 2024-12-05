@@ -56,7 +56,7 @@ namespace Watermelon
 
         public void ShowBanner()
         {
-            bannerObject.SetActive(true);
+            bannerObject.SetActive(false);
         }
 
         public void HideBanner()
