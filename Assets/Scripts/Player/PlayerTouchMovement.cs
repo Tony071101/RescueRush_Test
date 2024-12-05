@@ -8,6 +8,7 @@ using ETouch = UnityEngine.InputSystem.EnhancedTouch;
 
 public class PlayerTouchMovement : MonoBehaviour
 {
+    public static PlayerTouchMovement Instance { get; private set; }
     [SerializeField] private Vector2 JoystickSize = new Vector2(100, 100);
     [SerializeField] private FloatingJoystick joyStick;
     
@@ -16,10 +17,21 @@ public class PlayerTouchMovement : MonoBehaviour
     private Finger movementFinger;
     private Vector2 movementAmount;
     private bool autoMovingInPhase2 = false;
+    private float defaultSpeed;
+
+    private void Awake() {
+        if(Instance != null) {
+            Destroy(this.gameObject);
+        }
+
+        Instance = this;
+    }
 
     private void Start() {
         player = GetComponent<NavMeshAgent>();
         _anim = GetComponent<Animator>();
+        player.speed = PlayerPrefs.GetFloat("PlayerSpeed", 2.5f);
+        defaultSpeed = player.speed;
     }
 
     private void OnEnable() {
@@ -38,6 +50,11 @@ public class PlayerTouchMovement : MonoBehaviour
 
     private void HandleFingerDown(Finger TouchedFinger)
     {
+        if(GameManager.Instance.CurrentState == GameManager.GameState.Phase_Two || GameManager.Instance.isChangingSpeed == true) {
+            ChangePlayerSpeed(GameManager.Instance.speedBoostMultiplier);
+            GameManager.Instance.SpawnFloatingText(TouchedFinger.screenPosition);
+        }
+
         if(GameManager.Instance.CurrentState != GameManager.GameState.Phase_One) {
             return;
         }
@@ -132,5 +149,26 @@ public class PlayerTouchMovement : MonoBehaviour
         player.Move(forwardDirection * player.speed * Time.deltaTime);
 
         _anim.SetFloat("Velocity", player.speed);
+    }
+
+    public void ChangePlayerSpeed(float speedMultiplier) {
+        player.speed += speedMultiplier;
+        player.speed = Mathf.Round(player.speed * 10f) / 10f;
+    }
+
+    public void ResetDefaultSpeed() {
+        player.speed = defaultSpeed;
+    }
+
+    public float GetPlayerSpeed() {
+        return player.speed;
+    }
+    
+    public void SetPlayerSpeed(float upgradeSpeed) {
+        upgradeSpeed = Mathf.Round(upgradeSpeed * 10f) / 10f;
+        PlayerPrefs.SetFloat("PlayerSpeed", upgradeSpeed);
+        PlayerPrefs.Save();
+        player.speed = upgradeSpeed;
+        defaultSpeed = upgradeSpeed;
     }
 }

@@ -15,6 +15,8 @@ public class ColliderCheck : MonoBehaviour
     private Dictionary<Collider, float> detectedObjects = new Dictionary<Collider, float>();
     private List<Transform> blackCats = new List<Transform>();
     private List<Transform> yellowCats = new List<Transform>();
+    private void Start() {
+    }
 
     private void Update() {
         CheckConeArea();
@@ -54,7 +56,7 @@ public class ColliderCheck : MonoBehaviour
 
         detectedObjects[hit] += Time.deltaTime;
 
-        if (detectedObjects[hit] >= 1f)
+        if (detectedObjects[hit] >= 0.5f)
         {
             MoveObjectToPlayHolder(hit);
         }
@@ -122,5 +124,10 @@ public class ColliderCheck : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, transform.position + leftBoundary * coneRadius);
         Gizmos.DrawLine(transform.position, transform.position + rightBoundary * coneRadius);
+    }
+
+    public int GetTotalCatsSaved()
+    {
+        return blackCats.Count + yellowCats.Count;
     }
 }
