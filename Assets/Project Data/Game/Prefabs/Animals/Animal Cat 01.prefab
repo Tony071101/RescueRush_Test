@@ -145,9 +145,9 @@ GameObject:
   - component: {fileID: -5447278090048423767}
   - component: {fileID: -1717664334503889095}
   - component: {fileID: 7778468121543960317}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Animal Cat 01
-  m_TagString: Untagged
+  m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,8 +162,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7918532226583801500}
   m_Father: {fileID: 0}
@@ -251,8 +251,8 @@ NavMeshAgent:
   m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_BaseOffset: -0.08
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 3
 --- !u!1 &3819351529795227812
 GameObject:
